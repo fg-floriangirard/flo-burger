@@ -1,15 +1,8 @@
-import './App.css'
+import "./App.css"
+import LoginPage from "./components/pages/login/LoginPage"
 
 function App() {
- 
-
-  return (
-    <div className='App'>
-      <header className='App-Header'>
-        <h1>FloBurger</h1>
-      </header>
-    </div>
-  )
+  return <LoginPage />
 }
 
 export default App
