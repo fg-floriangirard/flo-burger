@@ -22,6 +22,7 @@ const MainStyled = styled.div`
   // To use for basket
   /* grid-template-columns: 25% 1fr; */
   grid-template-columns: 1fr;
+  overflow-y: scroll;
 
   /* .basket {
     background: #d69dd6;
