@@ -1,0 +1,1 @@
+export const pageRefresh = () => window.location.reload()
