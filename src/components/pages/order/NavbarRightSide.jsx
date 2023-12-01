@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export default function NavbarRightSide({ username }) {
   return (
-    <NavbarRightSideStyled className="right-side">
+    <NavbarRightSideStyled>
       Right
       <h1>Bonjour {username}</h1>
       <Link to="/">
@@ -14,7 +14,5 @@ export default function NavbarRightSide({ username }) {
 }
 
 const NavbarRightSideStyled = styled.div`
-  .right-side {
-    background: pink;
-  }
+    background: #9108a3;
 `
