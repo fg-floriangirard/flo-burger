@@ -5,12 +5,12 @@ const colors = {
   background_white: "#f5f5f7",
   background_dark: "#292729",
   primary: "#ffa01b",
-  primary_burger: "#ff9f1b",
   green: "green",
   success: "#60bd4f",
   red: "#e25549",
   redSecondary: "#c4151c",
   blue: "#51a7e1",
+  greyExtraLight: "lightgrey",
   greyLight: "#e4e5e9",
   greyMedium: "#a7a8ad",
   greySemiDark: "#93a2b1",
@@ -19,26 +19,26 @@ const colors = {
 }
 
 const spacing = {
-  xxs: "4px",
-  xs: "8px",
-  sm: "12px",
-  md: "20px",
-  lg: "32px",
-  xl: "52px",
-  xxl: "84px",
+  xxs: "0.25rem",
+  xs: "0.5rem",
+  sm: "0.75rem",
+  md: "1.25rem",
+  lg: "2rem",
+  xl: "3.25rem",
+  xxl: "5.25rem",
 }
 
 const fonts = {
-  XXXS: "8px",
-  XXS: "10px",
-  XS: "12px",
-  P0: "15px",
-  P1: "18px",
-  P2: "20px",
-  P3: "24px",
-  P4: "36px",
-  P5: "48px",
-  P6: "60px",
+  XXXS: "0.5rem",
+  XXS: "0.625rem",
+  XS: "0.75rem",
+  P0: "0.9375rem",
+  P1: "1.125rem",
+  P2: "1.25rem",
+  P3: "1.5rem",
+  P4: "2.25rem",
+  P5: "3rem",
+  P6: "3.75rem",
 }
 const gridUnit = 8
 const borderRadius = {
