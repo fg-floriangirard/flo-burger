@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-export default function Input({ value, onChange, Icon, ...otherProps}) {
+export default function TextInput({ value, onChange, Icon, ...otherProps}) {
   return (
     <InputStyled >
       {Icon && Icon}
@@ -41,7 +41,7 @@ const InputStyled  = styled.div`
     }
 `;
 
-Input.propTypes = {
+TextInput.propTypes = {
   value: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
   Icon: PropTypes.element,
