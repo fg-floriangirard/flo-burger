@@ -31,7 +31,7 @@ const LogoStyled = styled.div`
   img {
     object-fit: contain;
     object-position: center;
-    height: 60px;
+    height: 80px;
     width: 80px;
     margin: 0 5px;
   }
