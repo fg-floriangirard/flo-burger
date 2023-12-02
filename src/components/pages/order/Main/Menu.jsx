@@ -12,7 +12,7 @@ export default function Menu() {
     <MenuStyled className="menu">
       {products.map((product) => {
         return (
-          <Product {...product}/>         
+          <Product {...product} />         
         )
       })}
     </MenuStyled>
