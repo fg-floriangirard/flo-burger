@@ -2,14 +2,18 @@ import { useState } from "react";
 import { styled } from "styled-components"
 import { fakeMenu2 } from "../../../../fakeData/fakeMenu"
 import { theme } from "../../../../theme";
+import Product from "./Product";
 
 export default function Menu() {
 
   const [products, setProducts] = useState(fakeMenu2)
+  
   return (
     <MenuStyled className="menu">
       {products.map((product) => {
-        return <div className="product">{product.title}</div>
+        return (
+          <Product {...product}/>         
+        )
       })}
     </MenuStyled>
   )
@@ -23,10 +27,4 @@ const MenuStyled = styled.div`
   padding: 50px 50px 150px;
   justify-items: center;
   box-shadow: 0px 8px 20px 8px rgba(0, 0, 0, 0.2) inset ;
-
-  .product {
-    background: red;
-    width: 240px;
-    height: 330px;
-  }
 `;
