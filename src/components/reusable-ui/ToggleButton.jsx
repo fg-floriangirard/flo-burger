@@ -1,5 +1,4 @@
-import React from "react"
-import styled from "styled-components/macro"
+import { styled } from "styled-components"
 import { theme } from "../../theme"
 
 export default function ToggleButton({
@@ -33,7 +32,7 @@ const ToggleButtonStyled = styled.div`
   display: flex;
   margin-right: 10px;
   input[type="checkbox"] {
-    // Hides the square box but keeps the core "toggle functionality"
+
     &.toggle {
       display: none;
     }
@@ -43,7 +42,7 @@ const ToggleButtonStyled = styled.div`
       height: 40px;
       width: 200px;
       position: relative;
-      font-size: ${theme.fonts.size.XXS};
+      font-size: ${theme.fonts.XXS};
       letter-spacing: 0.5px;
       border: 2px solid ${theme.colors.background_dark};
       padding: 0;
@@ -53,7 +52,6 @@ const ToggleButtonStyled = styled.div`
       transition: all 500ms ease;
     }
 
-    // the small round circle
     &.toggle + label:before {
       content: "";
       position: absolute;
@@ -64,7 +62,6 @@ const ToggleButtonStyled = styled.div`
       z-index: 3;
     }
 
-    // text inside the switch button (for checked and unchecked)
     &.toggle + label:after {
       /* border: 1px solid blue; */
       width: 150px;
@@ -77,13 +74,11 @@ const ToggleButtonStyled = styled.div`
       text-overflow: ellipsis;
       overflow: hidden;
     }
-
-    // outside box
+    
     &.toggle + label.rounded {
       border-radius: 30px;
     }
 
-    // small circle
     &.toggle + label.rounded:before {
       border-radius: 50%;
     }
@@ -93,29 +88,25 @@ const ToggleButtonStyled = styled.div`
       /* text-align: right; */
     }
 
-    // text label when not checked
     &.toggle:not(:checked) + label:after {
       content: attr(data-unchecked);
       right: 8px;
       left: auto;
       opacity: 1;
       color: ${theme.colors.primary};
-      font-weight: ${theme.fonts.weights.bold};
+      font-weight: ${theme.weights.bold};
     }
 
-    // small circle when not checked
     &.toggle:not(:checked) + label:before {
       left: 3px;
       background-color: ${theme.colors.primary};
     }
 
-    // box container when checked
     &.toggle:checked + label {
       text-align: left;
       border-color: ${theme.colors.primary};
     }
 
-    // label text when checked
     &.toggle:checked + label:after {
       content: attr(data-checked);
       left: 9px;
@@ -125,7 +116,6 @@ const ToggleButtonStyled = styled.div`
       letter-spacing: 0px;
     }
 
-    // small circle when checked
     &.toggle:checked + label:before {
       left: 162px;
       background-color: ${theme.colors.primary};
