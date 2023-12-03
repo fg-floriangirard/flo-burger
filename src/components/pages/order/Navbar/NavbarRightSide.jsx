@@ -6,7 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { theme } from "../../../../theme";
 import { useContext } from "react";
 import {FaUserSecret} from "react-icons/fa";
-import OrderContext from "../../../context/OrderContext";
+import OrderContext from "../../../../context/OrderContext";
 
 export default function NavbarRightSide() {
   const {isAdminMode, setIsAdminMode} = useContext(OrderContext)

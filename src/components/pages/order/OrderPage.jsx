@@ -5,7 +5,7 @@ import { theme } from "../../../theme";
 import Navbar from "./Navbar/Navbar";
 import Main from "./Main/Main";
 import { useState } from "react";
-import OrderContext from "../../context/OrderContext";
+import OrderContext from "../../../context/OrderContext";
 
 
 export default function OrderPage() {

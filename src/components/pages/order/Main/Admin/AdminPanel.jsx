@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { useContext } from "react";
-import OrderContext from "../../../../context/OrderContext";
+import OrderContext from "../../../../../context/OrderContext";
 import { theme } from "../../../../../theme";
 
 export default function AdminPanel() {
