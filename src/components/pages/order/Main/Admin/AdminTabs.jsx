@@ -1,18 +1,22 @@
 import { styled } from "styled-components";
 import Tab from "../../../../reusable-ui/Tab";
-import { FiChevronDown, FiChevronUp } from "react-icons/fi"
-import { AiOutlinePlus } from "react-icons/ai"
-import { MdModeEditOutline } from "react-icons/md"
+import { FiChevronDown, FiChevronUp } from "react-icons/fi";
+import { AiOutlinePlus } from "react-icons/ai";
+import { MdModeEditOutline } from "react-icons/md";
 import { theme } from "../../../../../theme";
+import { useContext } from "react";
+import OrderContext from "../../../../context/OrderContext";
 
-export default function AdminTabs({
-  isCollapsed,
-  setIsCollapsed,
-  isAddSelected,
-  setIsAddSelected,
-  isEditSelected,
-  setIsEditSelected,
-}) {
+export default function AdminTabs() {
+  const {
+    isCollapsed,
+    setIsCollapsed,
+    isAddSelected,
+    setIsAddSelected,
+    isEditSelected,
+    setIsEditSelected,
+  } = useContext(OrderContext)
+
 
   const handleClick = () => {
     setIsCollapsed(!isCollapsed)
