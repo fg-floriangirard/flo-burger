@@ -32,7 +32,8 @@ const fonts = {
   XXXS: "0.5rem",
   XXS: "0.625rem",
   XS: "0.75rem",
-  P0: "0.9375rem",
+  sm: "0.9375rem",
+  P0: "1rem",
   P1: "1.125rem",
   P2: "1.25rem",
   P3: "1.5rem",
@@ -40,14 +41,22 @@ const fonts = {
   P5: "3rem",
   P6: "3.75rem",
 }
+
 const gridUnit = 8
+
 const borderRadius = {
   subtle: 1,
   round: "5px",
   extraRound: "15px",
   circle: "50%",
 }
-const shadows = {}
+
+const shadows = {
+  subtle: "0px -6px 8px -2px rgba(0, 0, 0, 0.1)",
+  medium: "-8px 8px 20px 0px rgb(0 0 0 / 20%)",
+  strong: "0px 8px 20px 8px rgba(0, 0, 0, 0.2) inset",
+}
+
 const weights = {
   light: 300,
   regular: 400,
