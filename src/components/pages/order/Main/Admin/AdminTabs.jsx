@@ -3,13 +3,16 @@ import Tab from "../../../../reusable-ui/Tab";
 import { FiChevronDown, FiChevronUp } from "react-icons/fi"
 import { AiOutlinePlus } from "react-icons/ai"
 import { MdModeEditOutline } from "react-icons/md"
-import { useState } from "react";
 import { theme } from "../../../../../theme";
 
-
-export default function AdminTabs({ isCollapsed, setIsCollapsed }) {
-  const [isAddSelected, setIsAddSelected] = useState(true)
-  const [isEditSelected, setIsEditSelected] = useState(false)
+export default function AdminTabs({
+  isCollapsed,
+  setIsCollapsed,
+  isAddSelected,
+  setIsAddSelected,
+  isEditSelected,
+  setIsEditSelected,
+}) {
 
   const handleClick = () => {
     setIsCollapsed(!isCollapsed)
@@ -20,13 +23,13 @@ export default function AdminTabs({ isCollapsed, setIsCollapsed }) {
     setIsAddSelected(true)
     setIsEditSelected(false)
   }
-
+  
   const handleEditClick = () => {
     setIsCollapsed(false)
     setIsEditSelected(true)
     setIsAddSelected(false)
   }
-
+  
   return (
     <AdminTabsStyled>
       <Tab 

@@ -5,11 +5,20 @@ import { useState } from "react"
 
 export default function Admin() {
   const [isCollapsed, setIsCollapsed] = useState(false)
+  const [isAddSelected, setIsAddSelected] = useState(true)
+  const [isEditSelected, setIsEditSelected] = useState(false)
 
   return (
     <AdminStyled>
-      <AdminTabs isCollapsed={isCollapsed} setIsCollapsed={setIsCollapsed}/> 
-      {!isCollapsed && <AdminPanel />}
+      <AdminTabs
+        isCollapsed={isCollapsed}
+        setIsCollapsed={setIsCollapsed}
+        isAddSelected={isAddSelected}
+        setIsAddSelected={setIsAddSelected}
+        isEditSelected={isEditSelected}
+        setIsEditSelected={setIsEditSelected}
+      />
+      {!isCollapsed && <AdminPanel isAddSelected={isAddSelected} isEditSelected={isEditSelected} />}
     </AdminStyled>
   )
 }
