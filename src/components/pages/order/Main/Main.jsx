@@ -1,21 +1,33 @@
+import { useContext, useState } from "react";
 import { styled } from "styled-components"
+import OrderContext from "../../../context/OrderContext";
 import { theme } from "../../../../theme";
 import Menu from "./Menu";
 import Admin from "./Admin/Admin";
-import { useContext } from "react";
-import OrderContext from "../../../context/OrderContext";
 
 export default function Main() {
-  const {isAdminMode, setIsAdminMode} = useContext(OrderContext)
+  const { isAdminMode } = useContext(OrderContext)
+  const [isCollapsed, setIsCollapsed] = useState(false)
+  const [isAddSelected, setIsAddSelected] = useState(true)
+  const [isEditSelected, setIsEditSelected] = useState(false)
 
   return (
-  <MainStyled className="main">
-    {/* <div className="basket">Panier</div> */}
-    <div className="menu-and-admin">
-      <Menu />
-      {isAdminMode && <Admin />}
-    </div>
-  </MainStyled>
+    <MainStyled>
+      {/* <div className="basket">Basket</div> */}
+      <div className="menu-and-admin">
+        <Menu />
+        {isAdminMode&& (
+          <Admin
+            isCollapsed={isCollapsed}
+            setIsCollapsed={setIsCollapsed}
+            isAddSelected={isAddSelected}
+            setIsAddSelected={setIsAddSelected}
+            isEditSelected={isEditSelected}
+            setIsEditSelected={setIsEditSelected}
+          />
+        )}
+      </div>
+    </MainStyled>
   )
 }
 
