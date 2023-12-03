@@ -1,5 +1,5 @@
-import { AiOutlinePlus } from "react-icons/ai"
-import { MdModeEditOutline } from "react-icons/md"
+import { AiOutlinePlus } from "react-icons/ai";
+import { MdModeEditOutline } from "react-icons/md";
 
 export const tabsConfig = [
   {

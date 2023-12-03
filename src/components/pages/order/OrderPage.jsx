@@ -1,4 +1,4 @@
-import { styled } from "styled-components"
+import { styled } from "styled-components";
 import { theme } from "../../../theme";
 import Navbar from "./Navbar/Navbar";
 import Main from "./Main/Main";
@@ -7,7 +7,7 @@ import OrderContext from "../../../context/OrderContext";
 
 
 export default function OrderPage() {
-  const [isAdminMode, setIsAdminMode] = useState(true)
+  const [isAdminMode, setIsAdminMode] = useState(false)
   const [isCollapsed, setIsCollapsed] = useState(false)
   const [currentTabSelected, setCurrentTabSelected] = useState("add")
 
