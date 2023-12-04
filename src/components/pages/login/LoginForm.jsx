@@ -40,7 +40,7 @@ export default function LoginForm() {
         />    
         <PrimaryButton 
           label={"Accéder à mon espace"} 
-          Icon={<IoChevronForwardCircle className="icon"/>} 
+          Icon={<IoChevronForwardCircle className="icon" />} 
         />
       </div>
     </LoginFormStyled>
@@ -62,7 +62,7 @@ const LoginFormStyled = styled.form`
   }
 
   h1 {
-    color: white;
+    color: ${theme.colors.white};
     font-size: ${theme.fonts.P5};
   }
 
@@ -71,12 +71,4 @@ const LoginFormStyled = styled.form`
     color: ${theme.colors.white};
     font-size: ${theme.fonts.P4};
   }
-
-  .icon {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: ${theme.fonts.P0};
-      margin-left: 10px;
-    }
 `

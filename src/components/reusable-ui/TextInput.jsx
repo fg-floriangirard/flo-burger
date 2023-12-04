@@ -1,11 +1,10 @@
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { theme } from "../../theme"
+import { theme } from "../../theme";
 
 export default function TextInput({ value, onChange, Icon, ...otherProps}) {
   return (
     <InputStyled >
-      {Icon && Icon}
+      <div className="icon">{Icon && Icon}</div>
       <input
         value={value}
         onChange={onChange}
@@ -25,13 +24,16 @@ const InputStyled  = styled.div`
     border-radius: ${theme.borderRadius.round};
 
     .icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       font-size : ${theme.fonts.P1};
-      margin-right: 8px;
+      margin-right: 5px;
       color: ${theme.colors.greyDark};
     }
 
     input {
-      font-size : ${theme.fonts.P0};
+      font-size : ${theme.fonts.P2};
       border: none;
       color: ${theme.colors.dark};
     }
@@ -40,11 +42,4 @@ const InputStyled  = styled.div`
       background: ${theme.colors.white};
       color: ${theme.colors.greyMedium};
     }
-`;
-
-TextInput.propTypes = {
-  value: PropTypes.string.isRequired,
-  onChange: PropTypes.func.isRequired,
-  Icon: PropTypes.element,
-  otherProps: PropTypes.object,
-};
+`
