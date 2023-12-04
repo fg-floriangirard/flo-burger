@@ -24,6 +24,10 @@ export default function OrderPage() {
     setProducts(productsUpdated)
   }
 
+  const resetProducts = () => { 
+    setProducts(fakeMenu.MEDIUM)
+  }
+
   const orderContextValue = {
     isAdminMode,
     setIsAdminMode,
@@ -34,6 +38,7 @@ export default function OrderPage() {
     products,
     handleAddProduct,
     handleDelete,
+    resetProducts,
   }
 
   return (
