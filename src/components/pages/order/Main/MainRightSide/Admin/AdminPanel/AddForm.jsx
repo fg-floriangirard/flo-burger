@@ -7,6 +7,7 @@ import { BsFillCameraFill } from "react-icons/bs";
 import { MdOutlineEuro } from "react-icons/md";
 import { theme } from "../../../../../../../theme";
 import TextInput from "../../../../../../reusable-ui/TextInput";
+import Button from "../../../../../../reusable-ui/Button";
 
 const EMPTY_PRODUCT = {
   id: "",
@@ -16,13 +17,11 @@ const EMPTY_PRODUCT = {
 }
 
 export default function AddForm() {
-  // state
   const { handleAddProduct } = useContext(OrderContext)
 
   const [newProduct, setNewProduct] = useState(EMPTY_PRODUCT)
   const [isSubmitted, setIsSubmitted] = useState(false)
 
-  // comportements
   const handleSubmit = (event) => {
     event.preventDefault()
     const productToAdd = {
@@ -48,7 +47,6 @@ export default function AddForm() {
     }, 2000)
   }
 
-  // affichage
   return (
     <AddFormStyled onSubmit={handleSubmit}>
       <div className="preview-image">
@@ -88,7 +86,11 @@ export default function AddForm() {
         />
       </div>
       <div className="submit">
-        <button className="submit-button">Submit button</button>
+        <Button
+          className="submit-button"
+          label={"Ajouter un nouveau produit au menu"}
+          version="success"
+        />
         {isSubmitted && (
           <div className="submit-message">
             <FiCheck />
@@ -137,13 +139,11 @@ const AddFormStyled = styled.form`
 
   .input-fields {
     grid-area: 1 / 2 / -2 / 3;
-
     display: grid;
     grid-row-gap: 8px;
   }
 
   .submit {
-    background: green;
     grid-area: 4 / -2 / -1 / -1;
     display: flex;
     align-items: center;

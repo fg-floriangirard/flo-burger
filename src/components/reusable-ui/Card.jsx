@@ -1,7 +1,7 @@
 import { styled } from "styled-components";
 import { theme } from "../../theme";
-import PrimaryButton from "./PrimaryButton";
 import { MdDeleteForever } from "react-icons/md";
+import Button from "./Button";
 
 export default function Card({ title, imageSource, leftDescription, hasDeleteButton, onDelete }) {
   return (
@@ -19,7 +19,7 @@ export default function Card({ title, imageSource, leftDescription, hasDeleteBut
         <div className="description">
           <div className="left-description">{leftDescription}</div>
           <div className="right-description">
-            <PrimaryButton className="primary-button" label={"Ajouter"} />
+            <Button className="primary-button" label={"Ajouter"} />
           </div>
         </div>
       </div>
