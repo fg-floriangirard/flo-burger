@@ -1,29 +1,61 @@
 import { styled } from "styled-components";
 import OrderContext from "../../../../../../../context/OrderContext";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 
 export default function AddForm() {
   const {handleAddProduct} = useContext(OrderContext)
 
-  const newProduct = {
-    id: new Date().getTime(),
-    title: "New",
-    imageSource: "",
-    price: 5,
-  }
+  const [title, setTitle] = useState("New burger")
+  const [imageSource, setImageSource] = useState("")
+  const [price, setPrice] = useState(0)
 
   const handleSubmit = (event) => {
     event.preventDefault()
+
+    const newProduct = {
+      id: new Date().getTime(),
+      title: title,
+      imageSource: imageSource,
+      price: price,
+    }
+
     handleAddProduct(newProduct)
   }
-  
+
+  const handleTitleChange = (event) => {
+    setTitle(event.target.value)
+  }
+
+  const handleImageChange = (event) => {
+    setImageSource(event.target.value)
+  }
+
+  const handlePriceChange = (event) => {
+    setPrice(event.target.value)
+  }
+
   return (
     <AddFormStyled onSubmit={handleSubmit}>
-      <div className="preview-image">Image</div>
+      <div className="preview-image">Pas d'image</div>
       <div className="input-fields">
-        <input type="text" placeholder="Nom du produit"/>
-        <input type="text" placeholder="URL de l'image"/>
-        <input type="text" placeholder="Prix du produit"/>
+        <input 
+            value={title}
+            type="text" 
+            placeholder="Nom du produit"
+            onChange={handleTitleChange}
+        />
+        <input 
+          value={imageSource}
+          type="text" 
+          placeholder="URL de l'image"
+          onChange={handleImageChange}
+        />
+        <input 
+          value={price}
+          type="text" 
+          placeholder="Prix du produit"
+          onChange={handlePriceChange}
+        />
       </div>
       <button className="submit-button">Submit</button>
     </AddFormStyled>
