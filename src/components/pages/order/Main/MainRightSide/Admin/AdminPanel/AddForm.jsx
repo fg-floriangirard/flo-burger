@@ -83,7 +83,7 @@ const AddFormStyled = styled.form`
 
   .submit {
     position: relative;
-    top: 3px;
+    top: 10px;
     grid-area: 4 / -2 / -1 / -1;
     display: flex;
     align-items: center;
