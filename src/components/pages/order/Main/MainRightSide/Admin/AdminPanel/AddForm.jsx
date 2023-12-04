@@ -1,6 +1,7 @@
 import { styled } from "styled-components";
 import OrderContext from "../../../../../../../context/OrderContext";
 import { useContext, useState } from "react";
+import { FaCheckCircle } from "react-icons/fa"; 
 
 const EMPTY_PRODUCT = {
   id: "",
@@ -12,6 +13,7 @@ export default function AddForm() {
   const {handleAddProduct} = useContext(OrderContext)
 
   const [newProduct, setNewProduct] = useState(EMPTY_PRODUCT)
+  const [isSubmitted, setIsSubmitted] = useState(false)
 
   const handleSubmit = (event) => {
     event.preventDefault()
@@ -23,6 +25,14 @@ export default function AddForm() {
 
     handleAddProduct(productToAdd)
     setNewProduct(EMPTY_PRODUCT)
+    displaySuccessMessage()
+  }
+
+  const displaySuccessMessage = () => {
+    setIsSubmitted(true)
+    setTimeout(() => {
+      setIsSubmitted(false)
+    }, 1500)
   }
 
   const handleChange = (event) => {
@@ -61,7 +71,15 @@ export default function AddForm() {
           onChange={handleChange}
         />
       </div>
-      <button className="submit-button">Submit</button>
+      <div className="submit">
+        <button className="submit-button">Submit</button>
+        {isSubmitted && (
+          <div className="submit-message">
+            <FaCheckCircle />
+            <span>Ajouté avec succès</span>
+          </div>
+        )}
+      </div>
     </AddFormStyled>
   )
 }
@@ -94,9 +112,21 @@ const AddFormStyled = styled.form`
     grid-area: 1 / 2 / -2 / -1;
   }
 
-  .submit-button {
+  .submit{
     background: yellow;
+    display: flex;
+    align-items: center;
     grid-area: 4 / -2 / -1 / -1;
     width: 50%;
+
+    .submit-button {
+      width: 50%;
+
+    }
+
+    .submit-message {
+      border: 1px solid red;
+      margin-left: 10px;
+    }
   }
 `
