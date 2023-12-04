@@ -8,7 +8,7 @@ import OrderContext from "../../../context/OrderContext";
 import { EMPTY_PRODUCT } from "./Main/MainRightSide/Admin/AdminPanel/AddForm"
 
 export default function OrderPage() {
-  const [products, setProducts] = useState(fakeMenu.MEDIUM)
+  const [products, setProducts] = useState(fakeMenu.LARGE)
   const [newProduct, setNewProduct] = useState(EMPTY_PRODUCT)
   const [isAdminMode, setIsAdminMode] = useState(false)
   const [isCollapsed, setIsCollapsed] = useState(false)
@@ -27,7 +27,7 @@ export default function OrderPage() {
   }
 
   const resetProducts = () => { 
-    setProducts(fakeMenu.MEDIUM)
+    setProducts(fakeMenu.LARGE)
   }
 
   const orderContextValue = {
