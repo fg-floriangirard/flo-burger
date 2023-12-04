@@ -5,9 +5,11 @@ import Navbar from "./Navbar/Navbar";
 import Main from "./Main/Main";
 import { useState } from "react";
 import OrderContext from "../../../context/OrderContext";
+import { EMPTY_PRODUCT } from "./Main/MainRightSide/Admin/AdminPanel/AddForm"
 
 export default function OrderPage() {
   const [products, setProducts] = useState(fakeMenu.MEDIUM)
+  const [newProduct, setNewProduct] = useState(EMPTY_PRODUCT)
   const [isAdminMode, setIsAdminMode] = useState(false)
   const [isCollapsed, setIsCollapsed] = useState(false)
   const [currentTabSelected, setCurrentTabSelected] = useState("add")
@@ -39,6 +41,8 @@ export default function OrderPage() {
     handleAddProduct,
     handleDelete,
     resetProducts,
+    newProduct,
+    setNewProduct,
   }
 
   return (
