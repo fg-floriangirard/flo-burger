@@ -22,6 +22,7 @@ export default function AddForm() {
     }
 
     handleAddProduct(productToAdd)
+    setNewProduct(EMPTY_PRODUCT)
   }
 
   const handleChange = (event) => {
