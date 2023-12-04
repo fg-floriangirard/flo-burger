@@ -18,6 +18,12 @@ export default function OrderPage() {
     setProducts(productsUpdated)
   }
 
+  const handleDelete = (productId) => {
+    const productsCopy = [...products]
+    const productsUpdated = productsCopy.filter((product) => product.id !== productId)
+    setProducts(productsUpdated)
+  }
+
   const orderContextValue = {
     isAdminMode,
     setIsAdminMode,
@@ -27,6 +33,7 @@ export default function OrderPage() {
     setCurrentTabSelected,
     products,
     handleAddProduct,
+    handleDelete,
   }
 
   return (

@@ -1,13 +1,13 @@
-import { styled } from "styled-components"
+import { styled } from "styled-components";
 import { theme } from "../../theme";
 import PrimaryButton from "./PrimaryButton";
 import { MdDeleteForever } from "react-icons/md";
 
-export default function Card({ title, imageSource, leftDescription, hasDeleteButton }) {
+export default function Card({ title, imageSource, leftDescription, hasDeleteButton, onDelete }) {
   return (
     <CardStyled>
       {hasDeleteButton && (
-      <button className="delete-button" aria-label="delete-button">
+      <button className="delete-button" aria-label="delete-button" onClick={onDelete}>
         <MdDeleteForever className="icon"/>
       </button>
       )}
