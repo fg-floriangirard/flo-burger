@@ -1,23 +1,22 @@
 import { useContext } from "react";
 import { styled } from "styled-components";
-import { theme } from "../../../../../theme";
-import { formatPrice } from "../../../../../utils/maths";
-import Card from "../../../../reusable-ui/Card";
-import OrderContext from "../../../../../context/OrderContext";
+import { theme } from "../../../../../../theme";
+import { formatPrice } from "../../../../../../utils/maths";
+import Card from "../../../../../reusable-ui/Card";
+import OrderContext from "../../../../../../context/OrderContext";
+import EmptyMenuAdmin from "./EmptyMenuAdmin";
+import EmptyMenuClient from "./EmptyMenuClient";
 
 const DEFAULT_IMAGE = "/images/coming-soon.png"
 
 export default function Menu() {
   const { products, isAdminMode, handleDelete, resetProducts } = useContext(OrderContext)
 
-  if (products.length === 0) 
-    return (
-      <div>
-        <span>Pas de produit</span>
-        <button onClick={resetProducts}>Générer de nouveaux produits</button>
-      </div>
-    )
-
+  if (products.length === 0) {
+    if (!isAdminMode) return <EmptyMenuClient />
+    return <EmptyMenuAdmin onReset={resetProducts} />
+  }
+  
   return (
     <MenuStyled className="menu">
       {products.map(({id, title, imageSource, price}) => {

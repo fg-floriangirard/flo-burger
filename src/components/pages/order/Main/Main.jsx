@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 import { theme } from "../../../../theme";
-import MainRightSide from "./MainRightSide/MainRightSide";
+import MainRightSide from "../Main/MainRightSide/MainRightSide"
 import Basket from "./Basket";
 
 export default function Main() {
