@@ -4,9 +4,9 @@ import { useContext, useState } from "react";
 
 const EMPTY_PRODUCT = {
   id: "",
-  title: "New product",
+  title: "",
   imageSource: "",
-  price: 5,
+  price: 0,
 }
 export default function AddForm() {
   const {handleAddProduct} = useContext(OrderContext)
