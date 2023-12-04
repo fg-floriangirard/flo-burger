@@ -1,15 +1,22 @@
 import { styled } from "styled-components";
 import { theme } from "../../../theme";
+import { fakeMenu } from "../../../fakeData/fakeMenu"
 import Navbar from "./Navbar/Navbar";
 import Main from "./Main/Main";
 import { useState } from "react";
 import OrderContext from "../../../context/OrderContext";
 
-
 export default function OrderPage() {
+  const [products, setProducts] = useState(fakeMenu.MEDIUM)
   const [isAdminMode, setIsAdminMode] = useState(false)
   const [isCollapsed, setIsCollapsed] = useState(false)
   const [currentTabSelected, setCurrentTabSelected] = useState("add")
+
+  const handleAddProduct = (newProduct) => {
+    const productsCopy = [...products]
+    const productsUpdated = [newProduct, ...productsCopy]
+    setProducts(productsUpdated)
+  }
 
   const orderContextValue = {
     isAdminMode,
@@ -18,6 +25,8 @@ export default function OrderPage() {
     setIsCollapsed,
     currentTabSelected,
     setCurrentTabSelected,
+    products,
+    handleAddProduct,
   }
 
   return (
