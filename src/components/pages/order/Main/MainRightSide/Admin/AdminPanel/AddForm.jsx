@@ -2,6 +2,7 @@ import { styled } from "styled-components";
 import OrderContext from "../../../../../../../context/OrderContext";
 import { useContext, useState } from "react";
 import { FaCheckCircle } from "react-icons/fa"; 
+import { theme } from "../../../../../../../theme";
 
 const EMPTY_PRODUCT = {
   id: "",
@@ -45,7 +46,7 @@ export default function AddForm() {
         {newProduct.imageSource ? (
           <img src={newProduct.imageSource} alt={newProduct.title} />
         ) : (
-          <div>Pas d'image</div>
+          <div className="empty-image">Aucune image</div>
         )}
       </div>
       <div className="input-fields">
@@ -85,14 +86,14 @@ export default function AddForm() {
 }
 
 const AddFormStyled = styled.form`
-  border: 1px solid red;
   display: grid;
   grid-template: repeat(4, 1fr) / 1fr 3fr;
+  grid-column-gap: 20px;
+  grid-row-gap: 10px;
   height: 100%;
   width: 80%;
 
   .preview-image {
-    background: purple;
     grid-area: 1 / 1 / 4 / 2;
     display: flex;
     justify-content: center;
@@ -104,16 +105,26 @@ const AddFormStyled = styled.form`
       object-fit: contain;
       object-position: center;
     }
+
+    .empty-image {
+      height: 100%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid ${theme.colors.greyLight};
+      line-height: 1.5;
+      color: ${theme.colors.greySemiDark};
+      border-radius: ${theme.borderRadius.round};
+    }
   }
 
   .input-fields {
     display: grid;
-    background: blue;
     grid-area: 1 / 2 / -2 / -1;
   }
 
   .submit{
-    background: yellow;
     display: flex;
     align-items: center;
     grid-area: 4 / -2 / -1 / -1;
