@@ -1,15 +1,34 @@
 import { styled } from "styled-components";
 import { theme } from "../../../theme";
+import { fakeMenu } from "../../../fakeData/fakeMenu"
 import Navbar from "./Navbar/Navbar";
 import Main from "./Main/Main";
 import { useState } from "react";
 import OrderContext from "../../../context/OrderContext";
-
+import { EMPTY_PRODUCT } from "./Main/MainRightSide/Admin/AdminPanel/AddForm"
 
 export default function OrderPage() {
+  const [products, setProducts] = useState(fakeMenu.LARGE)
+  const [newProduct, setNewProduct] = useState(EMPTY_PRODUCT)
   const [isAdminMode, setIsAdminMode] = useState(false)
   const [isCollapsed, setIsCollapsed] = useState(false)
   const [currentTabSelected, setCurrentTabSelected] = useState("add")
+
+  const handleAddProduct = (newProduct) => {
+    const productsCopy = [...products]
+    const productsUpdated = [newProduct, ...productsCopy]
+    setProducts(productsUpdated)
+  }
+
+  const handleDelete = (productId) => {
+    const productsCopy = [...products]
+    const productsUpdated = productsCopy.filter((product) => product.id !== productId)
+    setProducts(productsUpdated)
+  }
+
+  const resetProducts = () => { 
+    setProducts(fakeMenu.LARGE)
+  }
 
   const orderContextValue = {
     isAdminMode,
@@ -18,6 +37,12 @@ export default function OrderPage() {
     setIsCollapsed,
     currentTabSelected,
     setCurrentTabSelected,
+    products,
+    handleAddProduct,
+    handleDelete,
+    resetProducts,
+    newProduct,
+    setNewProduct,
   }
 
   return (
