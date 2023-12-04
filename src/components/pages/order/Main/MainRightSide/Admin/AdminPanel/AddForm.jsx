@@ -18,16 +18,14 @@ export default function AddForm() {
 
     const productToAdd= {
       ...newProduct,
-      id: new Date().getTime(),
+      id: crypto.randomUUID(),
     }
 
     handleAddProduct(productToAdd)
   }
 
   const handleChange = (event) => {
-    const newValue = event.target.value
-    const name = event.target.name
-    setNewProduct({ ...newProduct, [name]: newValue })
+    setNewProduct({ ...newProduct, [event.target.name]: event.target.value })
   }
 
   return (
