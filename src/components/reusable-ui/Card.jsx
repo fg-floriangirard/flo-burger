@@ -3,12 +3,14 @@ import { theme } from "../../theme";
 import PrimaryButton from "./PrimaryButton";
 import { MdDeleteForever } from "react-icons/md";
 
-export default function Card({ title, imageSource, leftDescription }) {
+export default function Card({ title, imageSource, leftDescription, hasDeleteButton }) {
   return (
     <CardStyled>
+      {hasDeleteButton && (
       <button className="delete-button" aria-label="delete-button">
         <MdDeleteForever className="icon"/>
       </button>
+      )}
       <div className="image">
         <img src={imageSource} alt={title} />
       </div>
